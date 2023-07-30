@@ -1,6 +1,8 @@
 import streamlit as st
 import nltk
 import re
+# import  streamlit_toggle as tog
+
 
 try:
     nltk.data.find("corpora/words")
@@ -13,8 +15,18 @@ st.write('thanks ronan 🥰')
 np = st.text_input("What's the number plate?")
 letters = re.sub(r'[0-9]',r'', np)
 
-hardmode = st.checkbox('activate HARDMODE 💀 Ronan disapproves of this mode :(')
-dev_mode = st.checkbox('dev mode (lets you see the regex expression)')
+with st.sidebar:
+    hardmode = st.checkbox('activate HARDMODE 💀 (not ronan-approved)')
+    dev_mode = st.checkbox('dev mode')
+# with st.sidebar:
+#     tog.st_toggle_switch(label="Activate Hardmode", 
+#                         default_value=False, 
+#                         label_after = True, 
+#                         inactive_color = '#D3D3D3', 
+#                         active_color="#11567f", 
+#                         track_color="#29B5E8"
+#                         )
+
 
 pattern = "^"
 if hardmode:
