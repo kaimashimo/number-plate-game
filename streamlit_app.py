@@ -2,7 +2,7 @@ import streamlit as st
 import nltk
 import re
 
-# nltk.download('words')
+nltk.download('words')
 
 st.write('# Number Plate Game!')
 st.write('thanks ronan 🥰')
